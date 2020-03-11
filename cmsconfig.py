@@ -27,7 +27,7 @@ def welcome_message():
     print("  \_____|_|  |_|_____/ \___\___/|_| |_|_| |_|\__, |")
     print("                                              __/ |")
     print("                                             |___/ ")
-    print(bcolors.WARNING+"             Code By: SoftSolutions - Vicente Contreras")
+    print(bcolors.WARNING+"             Code By: Road Luck")
 
 Count = 0
 Error = 0
