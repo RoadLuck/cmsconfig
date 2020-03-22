@@ -88,7 +88,7 @@ def main():
     ip_host = options.newhostIp
     old_ip_host = options.oldHostIp
 
-    if cms_id == None or ip_host==None:
+    if cms_id == None or ip_host==None or old_ip_host == None:
         print(parser.usage)
         exit(0)
     
