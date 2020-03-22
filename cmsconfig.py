@@ -1,6 +1,7 @@
 import os
 import optparse
 import logging
+import tempfile
 """
 Nota del programador:
     Este script solo es funcional si y solo si los archivos a modificar
@@ -89,7 +90,7 @@ def main():
     if cms_id==1: #Wordpress
         file_name = "wp-config.php"
         line_conf = "define('DB_HOST', '"+ip_host+"');\n"
-        index_conf = 33
+        index_conf = 31
         dir_list = found_dirs(file_name)
         logging.basicConfig(filename="WordpressFile.log", level=logging.INFO)
         check = modify_file(dir_list, file_name, line_conf, index_conf)
