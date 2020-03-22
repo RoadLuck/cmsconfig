@@ -8,9 +8,10 @@ Script en python creado con el fin de automatizar el proceso de configurar la ip
     Prestashop1.6
     Prestashop1.7
 # Uso:
-Id CSM: Wordpress: 1, Joomla: 2, Prestashop1.6: 3, Prestashop1.7: 4
+Id CSM: Wordpress: 1, Joomla: 2, Prestashop1.6: 3, Prestashop1.7: 4, Moodle: 5
   
     python3 cmsconfig.py --cms <id_cms> --ip <new_ip_host>
   
 # Ejemplos
     python3 cmsconfig.py --cms 1 --ip 10.0.1.2
+    python3 cmsconfig.py --cms 5

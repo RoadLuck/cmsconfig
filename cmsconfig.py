@@ -62,20 +62,21 @@ en los directorios en donde se ubica la cms.
             out.writelines(lines)
             out.close()
             logging.info('Modify File: '+directory+'/'+file_name)
+            return True
         except:
             Count = Count-1
             Error = Error + 1
             #print("File not Found: ",os.path.join(directory)+'/'+file_name)
             logging.error('File not Found:'+directory+'/'+file_name)
             continue
-    return True
+    
 
 
 def main():
     welcome_message()
     parser = optparse.OptionParser(bcolors.ENDC+'cmsconfig.py'+' --cms <numero_identificador_cms> --ip <host_edit>')
-    parser.add_option('--cms', dest='idCms', type='int', help='1-Wordpress, 2-Joomla, 3-Prestashop1.6, 4-Prestashop1.7')
-    parser.add_option('--ip', dest='hostIp', type='string',default="localhost", help='Especifique la ip deseada')
+    parser.add_option('--cms', dest='idCms', type='int', help='1-Wordpress, 2-Joomla, 3-Prestashop1.6, 4-Prestashop1.7, 5-Moodle')
+    parser.add_option('--ip', dest='hostIp', type='string',default="localhost", help='Especifique la ip deseada Default:localhost')
     (options, args) = parser.parse_args()
 
     cms_id = options.idCms
@@ -117,7 +118,15 @@ def main():
         dir_list = found_dirs(file_name)
         logging.basicConfig(filename="Prestashop1.7File.log", level=logging.INFO)
         check = modify_file(dir_list, file_name, line_conf, index_conf)
-
+    
+    elif cms_id==5:
+        file_name = "config.php"
+        line_conf = "$CFG->dbhost    = '"+ip_host+"';\n"
+        index_conf = 8
+        dir_list = found_dirs(file_name)
+        logging.basicConfig(filename="MoodleFile.log", level=logging.INFO)
+        check = modify_file(dir_list, file_name, line_conf, index_conf)
+        
     if check:
         if Count > 1:
             print(bcolors.OKGREEN+"[*] "+str(Count)+" archivos modificados correctamente.")
