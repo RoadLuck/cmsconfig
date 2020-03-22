@@ -78,7 +78,7 @@ en los directorios en donde se ubica la cms.
 
 def main():
     welcome_message()
-    parser = optparse.OptionParser(bcolors.ENDC+'cmsconfig.py'+' --cms <numero_identificador_cms> --ip <host_edit>')
+    parser = optparse.OptionParser(bcolors.ENDC+'cmsconfig.py'+' --cms <numero_identificador_cms> --nip <new_host_edit> --ip <old_host_edit>')
     parser.add_option('--cms', dest='idCms', type='int', help='1-Wordpress, 2-Joomla, 3-Prestashop1.6, 4-Prestashop1.7, 5-Moodle')
     parser.add_option('--nip', dest='newhostIp', type='string',default="localhost", help='Especifique la ip nueva deseada Default:localhost')
     parser.add_option('--oip', dest='oldHostIp', type='string',default="localhost", help='Especifique la ip antigua')
